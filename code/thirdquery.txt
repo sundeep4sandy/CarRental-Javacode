@@ -1,0 +1,70 @@
+mysql> use rentals
+Database changed
+mysql> select Owner_id,Car_type,MODEL,sum(Weekly_rate) from car group by Owner_id,Car_type,MODEL;
++----------+----------+----------------+------------------+
+| Owner_id | Car_type | MODEL          | sum(Weekly_rate) |
++----------+----------+----------------+------------------+
+|  1001000 | compact  | kia            |              500 |
+|  1001102 | suv      | bmw x6         |             4000 |
+|  1001111 | medium   | 458 spider     |              300 |
+|  1001123 | suv      | bmw x3         |             4000 |
+|  1001129 | suv      | bmw x6         |             4000 |
+|  1001143 | truck    | silverado      |              400 |
+|  1001148 | large    | volvo s80      |             6000 |
+|  1001369 | medium   | continental GT |              300 |
+|  1001432 | large    | jaguar XJ      |            10000 |
+|  1001439 | van      | x 201          |             6500 |
+|  1001456 | medium   | ford mustang   |              300 |
+|  1001478 | medium   | GHOST          |              456 |
+|  1001486 | medium   | audi a7        |              300 |
+|  1001546 | medium   | audi A4        |              300 |
+|  1001759 | medium   | ford fiesta    |              300 |
+|  1001789 | large    | volvo s80      |             6000 |
+|  1001896 | medium   | ford fiesta    |              300 |
+|  1001954 | medium   | camero         |              300 |
+|  1001963 | medium   | camero         |              300 |
+|  1001983 | large    | jaguar XF      |            10000 |
++----------+----------+----------------+------------------+
+20 rows in set (0.00 sec)
+
+mysql> select Owner_id,Car_type,MODEL,sum(Weekly_rate) from car group by Owner_id;
++----------+----------+----------------+------------------+
+| Owner_id | Car_type | MODEL          | sum(Weekly_rate) |
++----------+----------+----------------+------------------+
+|  1001000 | compact  | kia            |              500 |
+|  1001102 | suv      | bmw x6         |             4000 |
+|  1001111 | medium   | 458 spider     |              300 |
+|  1001123 | suv      | bmw x3         |             4000 |
+|  1001129 | suv      | bmw x6         |             4000 |
+|  1001143 | truck    | silverado      |              400 |
+|  1001148 | large    | volvo s80      |             6000 |
+|  1001369 | medium   | continental GT |              300 |
+|  1001432 | large    | jaguar XJ      |            10000 |
+|  1001439 | van      | x 201          |             6500 |
+|  1001456 | medium   | ford mustang   |              300 |
+|  1001478 | medium   | GHOST          |              456 |
+|  1001486 | medium   | audi a7        |              300 |
+|  1001546 | medium   | audi A4        |              300 |
+|  1001759 | medium   | ford fiesta    |              300 |
+|  1001789 | large    | volvo s80      |             6000 |
+|  1001896 | medium   | ford fiesta    |              300 |
+|  1001954 | medium   | camero         |              300 |
+|  1001963 | medium   | camero         |              300 |
+|  1001983 | large    | jaguar XF      |            10000 |
++----------+----------+----------------+------------------+
+20 rows in set (0.00 sec)
+
+mysql> select Owner_id,Car_type,MODEL,sum(Weekly_rate) from car group by Car_type;
++----------+----------+-----------+------------------+
+| Owner_id | Car_type | MODEL     | sum(Weekly_rate) |
++----------+----------+-----------+------------------+
+|  1001000 | compact  | kia       |              500 |
+|  1001983 | large    | jaguar XF |            32000 |
+|  1001963 | medium   | camero    |             3156 |
+|  1001129 | suv      | bmw x6    |            12000 |
+|  1001143 | truck    | silverado |              400 |
+|  1001439 | van      | x 201     |             6500 |
++----------+----------+-----------+------------------+
+6 rows in set (0.00 sec)
+
+mysql> notee
